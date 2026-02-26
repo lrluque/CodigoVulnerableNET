@@ -1,4 +1,5 @@
-﻿using System;
+ SqlCommand command = new SqlCommand("SELECT * FROM TableName WHERE ColumnName = @param", connection);
+ command.Parameters.AddWithValue("@param", userInput);
 using System.Data.SqlClient;
 
 class InsecureDatabaseAccess
