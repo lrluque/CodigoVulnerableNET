@@ -46,8 +46,8 @@ namespace Parte2.Controllers
         {
             var items = await _context.TodoItems
                 .FromSqlRaw($"SELECT * FROM TodoItems WHERE Title LIKE '%{query}%' OR Description LIKE '%{query}%'")
-                .ToListAsync();
-            return View("Index", items);
-        }
+ var items = await _context.TodoItems
+     .FromSqlInterpolated($"SELECT * FROM TodoItems WHERE Title LIKE '%{query}%' OR Description LIKE '%{query}%'")
+    .ToListAsync();
     }
 }
